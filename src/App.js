@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Home from "./components/Home";
+import Features from "./components/Features";
+import Projects from "./components/Projects";
+import Resume from "./components/Resume";
+import Contact from "./components/Contact";
+import Navbar from "./components/Navbar";
+import Box from '@mui/material/Box';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box minHeight="100vh" bgcolor="var(--background)" color="var(--text-primary)">
+      <Navbar />
+      <Box component="main" sx={{ pt: { xs: 8, sm: 10 }, bgcolor: 'var(--background)', color: 'var(--text-primary)' }}>
+        <Home />
+        <Features />
+        <Projects />
+        <Resume />
+        <Contact />
+      </Box>
+    </Box>
   );
 }
 
