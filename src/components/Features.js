@@ -39,14 +39,21 @@ const Features = () => (
     <Typography variant="h4" align="center" fontWeight={700} color="primary" gutterBottom>
       What I Do
     </Typography>
-    <Grid container spacing={4}>
+    <Grid container spacing={4} alignItems="stretch">
       {features.map((feature, idx) => (
-        <Grid item xs={12} sm={6} key={idx} sx={{ display: 'flex' }}>
-          <Card elevation={3} sx={{ 
+        <Grid item xs={12} sm={6} key={idx} sx={{ display: 'flex', height: '100%', minWidth: 0 }}>
+          <Card sx={{
             width: '100%',
+            height: '100%',
             display: 'flex',
             flexDirection: 'column',
-            height: '100%',
+            alignItems: 'center',
+            justifyContent: 'center',
+            p: 1,
+            mr: 2,
+            ml: 2,
+            maxWidth: 800,
+            minWidth: 0
           }}>
             <CardContent sx={{ 
               flexGrow: 1,
@@ -54,13 +61,14 @@ const Features = () => (
               flexDirection: 'column',
               alignItems: 'center',
               textAlign: 'center',
-              p: 3
+              p: 2,
+              minWidth: 0
             }}>
-              <Box sx={{ fontSize: 48, color: 'var(--accent)', mb: 2 }}>{feature.icon}</Box>
-              <Typography variant="h6" fontWeight={600} gutterBottom>
+              <Box sx={{ fontSize: { xs: 38, sm: 48 }, color: 'var(--accent)', mb: 2 }}>{feature.icon}</Box>
+              <Typography variant="h6" fontWeight={600} gutterBottom sx={{ wordBreak: 'break-word', fontSize: { xs: '1.1rem', sm: '1.2rem' } }}>
                 {feature.title}
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography variant="body2" color="text.secondary" sx={{ wordBreak: 'break-word', fontSize: { xs: '0.98rem', sm: '1.05rem' } }}>
                 {feature.description}
               </Typography>
             </CardContent>

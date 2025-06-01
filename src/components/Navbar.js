@@ -32,11 +32,11 @@ const Navbar = () => {
   const handleDrawerClose = () => setDrawerOpen(false);
 
   return (
-    <AppBar position="fixed" elevation={2} sx={{ bgcolor: 'var(--primary)', color: 'var(--text-primary)' }}>
-      <Toolbar sx={{ maxWidth: 900, mx: 'auto', width: '100%', display: 'flex', justifyContent: 'space-between' }}>
-        <Box display="flex" alignItems="center" gap={1}>
+    <AppBar position="fixed" elevation={2} sx={{ bgcolor: 'var(--primary)', color: 'var(--text-primary)', width: '100vw', left: 0 }}>
+      <Toolbar sx={{ maxWidth: 1200, mx: 'auto', width: '100%', display: 'flex', justifyContent: 'space-between', px: { xs: 1, sm: 3 } }}>
+        <Box display="flex" alignItems="center" gap={1} minWidth={0}>
           <Avatar src={require("../images/logo.JPG")} alt="Logo" sx={{ width: 32, height: 32 }} />
-          <Typography variant="h6" color="secondary" fontWeight={700} sx={{ letterSpacing: 1 }}>
+          <Typography variant="h6" color="secondary" fontWeight={700} sx={{ letterSpacing: 1, fontSize: { xs: '1rem', sm: '1.25rem' }, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
             Nimanthaka Bhashana
           </Typography>
         </Box>
@@ -56,14 +56,14 @@ const Navbar = () => {
               anchor="right"
               open={drawerOpen}
               onClose={handleDrawerClose}
-              PaperProps={{ sx: { bgcolor: 'var(--primary)', color: 'var(--text-primary)', minWidth: 220 } }}
+              PaperProps={{ sx: { bgcolor: 'var(--primary)', color: 'var(--text-primary)', width: { xs: '80vw', sm: 320 }, maxWidth: 400 } }}
             >
-              <Box sx={{ width: 220 }} role="presentation" onClick={handleDrawerClose}>
+              <Box sx={{ width: { xs: '80vw', sm: 320 }, maxWidth: 400, minWidth: 180, overflowX: 'auto' }} role="presentation" onClick={handleDrawerClose}>
                 <List>
                   {navLinks.map((item) => (
                     <ListItem key={item.href} disablePadding>
-                      <ListItemButton component="a" href={item.href} sx={{ color: 'var(--text-primary)' }}>
-                        <ListItemText primary={item.label} />
+                      <ListItemButton component="a" href={item.href} sx={{ color: 'var(--text-primary)', fontWeight: 600, fontSize: '1.1rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', width: '100%' }}>
+                        <ListItemText primary={item.label} sx={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }} />
                       </ListItemButton>
                     </ListItem>
                   ))}
@@ -79,7 +79,7 @@ const Navbar = () => {
                 color="secondary"
                 component="a"
                 href={item.href}
-                sx={{ color: 'var(--text-primary)', fontWeight: 600 }}
+                sx={{ color: 'var(--text-primary)', fontWeight: 600, fontSize: { xs: '0.95rem', md: '1.1rem' }, px: { xs: 1, sm: 2 } }}
               >
                 {item.label}
               </Button>
@@ -87,6 +87,8 @@ const Navbar = () => {
           </Box>
         )}
       </Toolbar>
+      {/* Spacer to avoid content underlap */}
+      <Box sx={{ height: { xs: 56, sm: 64, md: 72 }, display: 'block' }} />
     </AppBar>
   );
 };

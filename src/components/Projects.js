@@ -51,10 +51,22 @@ const Projects = () => (
     </Typography>
     <Grid container spacing={4}>
       {projects.map((project, idx) => (
-        <Grid item xs={12} sm={6} md={4} key={idx}>
-          <Card elevation={4} sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+        <Grid item xs={12} sm={6} md={4} key={idx} sx={{ display: 'flex', height: '100%', minWidth: 0 }}>
+           <Card sx={{
+                      width: '100%',
+                      height: '100%',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      p: 0.2,
+                      mr: 2,
+                      ml: 2,
+                      maxWidth: 800,
+                      minWidth: 0
+                    }}>
             {project.image && (
-              <Box sx={{ width: '100%', height: 180, overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', bgcolor: 'var(--surface)' }}>
+              <Box sx={{ width: '100%', height: { xs: 120, sm: 150, md: 180 }, overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', bgcolor: 'var(--surface)' }}>
                 <img
                   src={project.image}
                   alt={project.title}
@@ -62,15 +74,15 @@ const Projects = () => (
                 />
               </Box>
             )}
-            <CardContent sx={{ flexGrow: 1 }}>
-              <Typography gutterBottom variant="h6" component="div" fontWeight={700} color="secondary">
+            <CardContent sx={{ flexGrow: 1, minWidth: 0 }}>
+              <Typography gutterBottom variant="h6" component="div" fontWeight={700} color="secondary" sx={{ wordBreak: 'break-word', fontSize: { xs: '1.1rem', sm: '1.2rem' } }}>
                 {project.title}
               </Typography>
-              <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+              <Typography variant="body2" color="text.secondary" sx={{ mb: 2, wordBreak: 'break-word', fontSize: { xs: '0.98rem', sm: '1.05rem' } }}>
                 {project.description}
               </Typography>
               {project.tech && (
-                <Typography variant="subtitle2" color="primary" sx={{ mb: 2 }}>
+                <Typography variant="subtitle2" color="primary" sx={{ mb: 2, fontSize: { xs: '0.92rem', sm: '1.02rem' } }}>
                   {project.tech}
                 </Typography>
               )}

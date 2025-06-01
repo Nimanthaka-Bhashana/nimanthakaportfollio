@@ -47,6 +47,55 @@ body {
   padding: 2rem 1.5rem;
   margin-bottom: 2rem;
   transition: box-shadow 0.3s, transform 0.3s;
+  min-height: 240px; /* Ensures consistent height on mobile/tablet */
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Fill parent height */
+}
+
+@media (min-width: 900px) {
+  .card {
+    height: 100%;
+  display: flex;
+  flex-direction: column;
+  }
+}
+@media (min-width: 1200px) {
+  .card {
+    min-height: 340px; /* Reasonable height for large screens */
+  }
+}
+@media (min-width: 1400px) {
+  .card {
+    min-height: 360px; /* Slightly taller cards for ultra-wide screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .app-container {
+    padding: 1rem;
+  }
+  .card {
+    padding: 1rem;
+    min-height: 180px;
+  }
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .section-title {
+    font-size: 1.7rem;
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
 }
 .card:hover {
   box-shadow: 0 8px 32px rgba(37, 99, 235, 0.15);
@@ -87,6 +136,8 @@ body {
   color: var(--primary);
   letter-spacing: 1px;
   text-align: center;
+  word-break: break-word;
+  line-height: 1.1;
 }
 
 .text-secondary {
