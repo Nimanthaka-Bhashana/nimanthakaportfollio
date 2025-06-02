@@ -9,7 +9,7 @@ const projects = [
       "Developed a restaurant management system using C# and .NET framework. The system features an intuitive interface for staff to efficiently manage orders, inventory, and customer data. Utilizing SQL Server for data storage.",
     tech: "C#, .NET, SQL Server",
     github: "https://github.com/yourgithub/restaurant-management",
-    image: require('../images/projects/projectOne.png'),
+    image: require('../images/projects/projectTwo.png'),
   },
   {
     title: "Pizza Shop Management System",
@@ -17,7 +17,7 @@ const projects = [
       "Utilized React.js and Java with Spring Boot. Enhanced customer experience and facilitated efficient admin operations.",
     tech: "React.js, Java, Spring Boot",
     github: "https://github.com/yourgithub/pizza-shop-management",
-    image: require('../images/projects/projectTwo.png'),
+    image: require('../images/projects/projectThree.png'),
   },
   {
     title: "Student Management System",
@@ -25,7 +25,7 @@ const projects = [
       "A Java-based Student Management System, created with NetBeans and MySQL, streamlines student-related tasks in educational institutions.",
     tech: "Java, NetBeans, MySQL",
     github: "https://github.com/yourgithub/student-management",
-    image: require('../images/projects/projectThree.png'),
+    image: require('../images/projects/projectFour.png'),
   },
   {
     title: "Colombo City Main Campus App",
@@ -33,7 +33,6 @@ const projects = [
       "Developed a mobile app for a Java-based Student Management System using Android Studio and MySQL, enhancing student task management for educational institutions.",
     tech: "Android Studio, Java, MySQL",
     github: "https://github.com/yourgithub/colombo-campus-app",
-    image: require('../images/projects/projectFour.png'),
   },
   {
     title: "Website For Ice Cream-Company",
@@ -41,6 +40,7 @@ const projects = [
       "Designed and implemented a responsive Ice cream website for an online platform including PHP back-end system.",
     tech: "PHP, HTML, CSS, JavaScript",
     github: "https://github.com/yourgithub/ice-cream-company",
+    image: require('../images/projects/projectOne.png'),
   },
 ];
 

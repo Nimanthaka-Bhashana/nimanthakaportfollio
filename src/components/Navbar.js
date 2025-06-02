@@ -15,6 +15,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 
+
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "Features", href: "#features" },
